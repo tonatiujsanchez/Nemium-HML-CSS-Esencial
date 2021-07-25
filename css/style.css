@@ -29,11 +29,13 @@
     --gray30: #212121;
     --gray20: #212429;
     --gray10: #616161;
+    --amarillo: #FEC62E;
 }
 
 body{
     color: var(--gray30);
-    font-family: charter;
+    /* font-family: charter; */
+    font-family: 'Roboto', sans-serif;
 }
 a{
     color: var(--gray30);
@@ -60,10 +62,59 @@ nav details summary{
 h1{
     /* font-size: 60px; */
     font-size: 3.75em;
+    font-weight: 700;
+    text-align: end;
 }
 h2{
     font-size: 2em;
+    font-weight: 700;
 }
 h3{
     font-size: 1.5em;
+    font-weight: 700;    
 }
+
+pre{
+    background: var(--amarillo);
+}
+
+.hero{
+    height: 350px;
+    background: linear-gradient( to top, #FFFFFF55, transparent ), url('../img/patron.png');
+    /* background-repeat: no-repeat; */
+    /* background-position: right 50px top 5px; */
+    background-size: 150px;
+}
+.section-content {
+    counter-reset: titleList;
+}
+.section-content h3{
+    counter-increment: titleList;
+}
+
+.section-content h3::before{
+    content: counter(titleList, decimal)". ";
+}
+
+.section-content h3::after{
+    content: '';
+    display: block;
+    margin-top: 4px;
+    width: 228px;
+    height: 4px;
+    background-color: var(--gray20);
+}
+
+::selection{
+    background: green;
+}
+
+
+
+
+
+
+
+
+
+
