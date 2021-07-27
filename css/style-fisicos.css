@@ -31,6 +31,9 @@
     --gray10: #616161;
     --amarillo: #FEC62E;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     color: var(--gray30);
@@ -42,9 +45,26 @@ a{
     color: var(--gray30);
 }
 header{
+    /* border: 1px solid red; */
+
     font-size: 14px;
     color: var(--gray10);
+    width: 188px;
+    line-height: 24px;
+    position: absolute;
+    top: 64px;
+    left: -232px;
+
+
+    
+
+    /* position: static;  || Valor por defecto  */
+    /* position: relative; */
+    /* position: absolute; */
+    /* position: fixed; */
+    /* position: sticky; */
 }
+
 header a{
     color: var(--gray10);
     text-decoration: none;
@@ -52,8 +72,13 @@ header a{
 header a:hover{
     color: var(--gray30);
 }
+nav details ol li{
+    margin-bottom: 16px;
+}
 nav details summary{
     font-weight: bold;
+    line-height: 24px;
+    margin-bottom: 16px;
 }
 
 /* ol li:nth-child(1) {
@@ -66,8 +91,6 @@ h1{
     font-weight: 400;
     margin-top: 64px;
     margin-bottom: 16px;
-
-    border: 1px solid red;
 }
 /* h1 + p{
     margin-bottom: 64px;
@@ -84,7 +107,15 @@ h3{
     font-size: 1.5em;
     font-weight: 400;
     margin-top: 16px;
-    margin-bottom: 24px;    
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+
+    position: relative;
+
+
+    /* position: sticky; */
+    /* top: 0; */
+    /* background-color: #FFF;     */
 }
 
 pre{
@@ -106,6 +137,33 @@ blockquote p:nth-child(2){
 }
 blockquote p:nth-child(2)::before{
     content: "- ";
+}
+.header{
+    position: sticky;
+    top: 0;
+}
+.header-content{
+    position: relative;
+}
+.nav-title{
+    text-transform: uppercase;
+}
+.main{
+    /* position: relative; */
+}
+.wrapper{
+    width: 902px;
+    margin: auto;
+}
+.main-content{
+    /* background-color: burlywood; */
+    padding: 0 20px;
+}
+
+
+.debug{
+    outline: 2px solid red;
+    /* border: 1px solid red !important; */
 }
 
 .hero{
@@ -138,6 +196,7 @@ blockquote p:nth-child(2)::before{
 }
 .section-content h3{
     counter-increment: titleList;
+    display: inline-block;
 }
 
 .section-content h3::before{
@@ -148,22 +207,24 @@ blockquote p:nth-child(2)::before{
     content: '';
     display: inline-block;
     margin-top: 4px;
-    width: 228px;
+    width: 100%;
     height: 4px;
     background-color: var(--gray20);
-      
+
+    position: absolute;
+    left: 0;
+    bottom: 0;  
      /* TODO: Mover en la parte inferion del h3*/
 }
 
 .section-content:last-of-type h3::before{
-    content: "";
+    display: none;
 }
 .section-content:last-of-type h3::after{
-    content: "";
-    display: inline;
+    display: none;
 }
 ::selection{
-    background: green;
+    /* background: green; */
 }
 
 
