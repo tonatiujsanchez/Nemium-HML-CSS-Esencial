@@ -26,67 +26,181 @@
 
 :root{
     font-size: 16px;
-    --gray30: #212121;
-    --gray20: #212429;
-    --gray10: #616161;
+    --white30: #FFFFFF;
+    --white20: #A5A3A5;
+    --white10: #3A3539;
     --amarillo: #FEC62E;
+    --bg2: #251F24;
+}
+html{
+    scroll-behavior: smooth;
 }
 
 body{
-    color: var(--gray30);
+    color: var(--white30);
     /* font-family: charter; */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg2);
+    margin-inline: 0;
+    margin-block: 0;
 }
 a{
-    color: var(--gray30);
+    color: var(--white30);
+    display: inline-block;
+    margin-block-end: 16px;
+
 }
 header{
     font-size: 14px;
-    color: var(--gray10);
+    line-height: 24px;
+    color: var(--white30);
+}
+header li{
+    color: var(--white20);
 }
 header a{
-    color: var(--gray10);
+    color: var(--white20);
     text-decoration: none;
 }
 header a:hover{
-    color: var(--gray30);
+    color: var(--white30);
 }
-nav details summary{
-    font-weight: bold;
+nav .nav-title{
+    color: var(--white30);
+    text-transform: uppercase;
 }
 
-/* ol li:nth-child(1) {
-    border: 1px solid red;
-} */
+
+nav details summary{
+    line-height: 24px;
+    cursor: pointer;
+}
+nav details summary p{
+    vertical-align: middle;
+    display: inline-block;
+    margin-block-start: 0;
+    max-inline-size: 160px;
+    color: var(--white30);
+    font-weight: 700;
+}
+nav details summary p:last-of-type{
+    vertical-align: top;
+    line-height: 24px;
+}
+nav details summary::marker{
+    content: url('../img/arrow-contracted.png');
+    display: inline-block;
+}
+nav details[open] summary::marker{
+    content: url('../img/arrow-expand.png');
+}
+nav details ol{
+    margin-block-start: 0;
+}
+
 
 h1{
-    /* font-size: 60px; */
     font-size: 3.75em;
     font-weight: 700;
-    text-align: end;
+    margin-block-start: 64px;
+    margin-block-end: 16px;
 }
 h2{
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 700;
+    margin-block: 40px;
 }
 h3{
     font-size: 1.5em;
-    font-weight: 700;    
+    font-weight: 600;   
+    margin-block: 16px; 
+}
+p{
+    color: var(--white20);
+    line-height: 24px;
+}
+hr{
+    margin-block: 40px;
+    border-color: rgba(97, 97, 97, 0.2);
+}
+pre{
+    background: var(--white10);
+    color: var(--white30);
+    font-family: 'Nunito', sans-serif;
+    line-height: 24px;
+    padding-inline: 40px;
+    padding-block: 40px;
+    border-radius: 8px;
+    overflow: auto;
+    border-block: 8px solid #5551FF;
+    border-inline: 8px solid #5551FF;
+
+    box-shadow: -10px 10px 0px #ABAAF6;
+    
+}
+blockquote{
+    margin-block-start: 80px;
+    margin-block-end: 63px;
+    background: var(--white10);
+    border-radius: 8px;
+    padding-inline: 24px;
+    padding-block: 24px;
+    font-size: 24px;
+    line-height: 32px;
+}
+blockquote p{
+    color: var(--white30);
+}
+.header{
+    position: sticky;
+    inset-block-start: -45px;
+}
+.header-content{
+    position: relative;
+    inset-block-start: 64px;
 }
 
-pre{
-    background: var(--amarillo);
+header{
+    /* outline: 1px solid red; */
+    position: absolute;
+    inline-size: 188px;
+    inset-inline-start: -240px;
 }
+
+
+.main{
+    /* border: 2px solid red; */
+}
+.wrapper{
+    /* border: 2px solid green; */
+    max-inline-size: 902px;
+    /*inline-size: 932px;  | width */
+    /* block-size: auto;   | height */ 
+    margin: auto;
+}
+.main-content{
+    /* border: 2px solid blue; */
+    padding-inline: 20px;
+}
+
 
 .hero{
     height: 350px;
-    background: linear-gradient( to top, #FFFFFF55, transparent ), url('../img/patron.png');
-    /* background-repeat: no-repeat; */
+    /* background: linear-gradient( to top, #FFFFFF55, transparent ), url('../img/patron.png'); */
+    background: linear-gradient(96deg, #314755 30.63%, #26A0DA 102.18%);
     /* background-position: right 50px top 5px; */
-    background-size: 150px;
+    /* background-size: 150px; */
+}
+.section-content img{
+    display: block;
+    margin-block-start: 40px;
+    max-inline-size: 100%;
 }
 .section-content {
     counter-reset: titleList;
+}
+.section-content + hr{
+    display: none;
 }
 .section-content h3{
     counter-increment: titleList;
@@ -96,19 +210,23 @@ pre{
     content: counter(titleList, decimal)". ";
 }
 
-.section-content h3::after{
+.section-content:last-of-type h3::before{
+    display: none;
+}
+
+/* .section-content h3::after{
     content: '';
     display: block;
     margin-top: 4px;
     width: 228px;
     height: 4px;
-    background-color: var(--gray20);
-}
+    background-color: var(--white20);
+} */
 
-::selection{
+/* ::selection{
     background: green;
 }
-
+ */
 
 
 

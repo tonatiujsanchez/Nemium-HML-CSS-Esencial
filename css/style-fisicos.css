@@ -122,6 +122,7 @@ pre{
     background: var(--amarillo);
     padding: 40px;
     line-height: 24px;
+    overflow: auto;
     /* font-family: 'Roboto', sans-serif; */
 }
 
@@ -131,6 +132,7 @@ blockquote{
     padding-left: 16px;
     line-height: 24px;
     border-left: 4px solid var(--gray30);
+
 }
 blockquote p:nth-child(2){
     color: var(--gray10);
@@ -214,7 +216,6 @@ blockquote p:nth-child(2)::before{
     position: absolute;
     left: 0;
     bottom: 0;  
-     /* TODO: Mover en la parte inferion del h3*/
 }
 
 .section-content:last-of-type h3::before{
